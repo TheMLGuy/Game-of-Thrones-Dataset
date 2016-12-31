@@ -29,7 +29,8 @@ plt.xlabel('Year')
 plt.ylabel('Number of battles')
 plt.title('Battles/Year')
 plt.ylim([1,25])
-plt.hist(battlesdf['year'],5)
+plt.margins(0.01)
+plt.hist(battlesdf['year'],10)
 plt.show()
 
 #How many times has each defending king been attacked and by whom
@@ -46,4 +47,5 @@ print(defenderDF)
 plt.bar(defenderDF['ind'],defenderDF['defenseCount'],alpha=0.4)
 plt.xticks(defenderDF['ind'],defenderDF['king'],rotation='vertical')
 plt.tight_layout()
+
 plt.show()
