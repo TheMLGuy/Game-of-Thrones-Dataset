@@ -47,5 +47,19 @@ print(defenderDF)
 plt.bar(defenderDF['ind'],defenderDF['defenseCount'],alpha=0.4)
 plt.xticks(defenderDF['ind'],defenderDF['king'],rotation='vertical')
 plt.tight_layout()
+plt.show()
 
+#Attacker combo vs Defense King
+battlesdf['attackCombo']=battlesdf[['attacker_1','attacker_2','attacker_3','attacker_4']].apply(lambda x: '/'.join(x.dropna()),axis=1)
+whichKingGotAttacked=[(x,y) for x,y in battlesdf[['attackCombo','defender_king']].values if(pd.isnull(x)==False) and pd.isnull(y)==False]
+print(whichKingGotAttacked) 
+defvsatt=pd.DataFrame(whichKingGotAttacked)
+defvsatt.columns=['Attack Combination','Defender King']
+#attacker combinations
+plt.bar(range(1,len(defvsatt['Attack Combination'].value_counts().index)+1),defvsatt['Attack Combination'].value_counts())
+plt.xticks(range(1,len(defvsatt['Attack Combination'].value_counts().index)+1),defvsatt['Attack Combination'].value_counts().index.tolist(),rotation='vertical')
+plt.show()
+#defender combinations
+plt.bar(range(1,len(defvsatt['Defender King'].value_counts().index)+1),defvsatt['Defender King'].value_counts())
+plt.xticks(range(1,len(defvsatt['Defender King'].value_counts().index)+1),defvsatt['Defender King'].value_counts().index.tolist(),rotation='vertical')
 plt.show()
