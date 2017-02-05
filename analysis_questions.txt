@@ -1,0 +1,10 @@
+How many times have each defending king been attacked and by whom
+how many types of battles
+battles/locations, region
+kings vs defenses-done
+
+frequency of battles/year-done
+ranking battles as per 'attack vs defense strength '
+defense kings vs attackers size
+spread of battle location across regions
+champions of war-attacker outcome,major death,major capture
