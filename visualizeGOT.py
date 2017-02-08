@@ -75,5 +75,4 @@ plt.show()
 datadf=battlesdf[['attacker_size','defender_size','attacker_outcome']].dropna()
 colors=[sb.color_palette()[0] if x=='win' else 'black' for x in datadf['attacker_outcome']]
 plt.scatter(datadf['attacker_size'],datadf['defender_size'],s=100,c=colors,lw=2.)
-
 plt.show()
